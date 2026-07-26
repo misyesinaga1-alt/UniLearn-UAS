@@ -1,211 +1,159 @@
-# UniLearn 🎓📚
+# UniLearn — E-Learning Kampus 🎓
 
-Aplikasi mobile **E-Learning Kampus** berbasis React Native + Expo yang membantu mahasiswa mengakses daftar mata kuliah, melihat detail pembelajaran, menyimpan progress belajar, dan mengunggah bukti tugas secara lokal.
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-SDK_54-000020?style=flat&logo=expo&logoColor=white)
+![AsyncStorage](https://img.shields.io/badge/AsyncStorage-Local_Persistence-00b894)
 
-Project ini dibuat sebagai **Final Project UAS Praktikum Pemrograman Mobile** dengan implementasi navigasi, penyimpanan data lokal, device feature, dan build APK menggunakan EAS Build.
+> UniLearn adalah aplikasi mobile e-learning sederhana untuk mahasiswa. 
+> Aplikasi ini membantu mahasiswa melihat daftar mata kuliah, mempelajari detail materi, menyimpan progress belajar, serta mengunggah foto tugas secara lokal menggunakan perangkat mobile.
 
 ---
 
-## 📱 Deskripsi Singkat
+# 📸 Screenshots
 
-UniLearn adalah aplikasi pembelajaran online sederhana untuk mahasiswa.
+| Login Screen | Home Screen | Feature Screen |
+|:---:|:---:|:---:|
+| ![Login](Login1.jpeg) | ![Home](Home2.jpeg) | ![Feature](Feature3.jpeg) |
 
-Fitur utama aplikasi:
-- Login mahasiswa menggunakan NIM dan nama
-- Melihat daftar mata kuliah
-- Melihat detail mata kuliah
-- Menyimpan progress belajar menggunakan AsyncStorage
-- Upload foto tugas menggunakan galeri perangkat
-- Melihat profil mahasiswa dan logout
+## Upload Tugas
+
+![Upload](Upload4.jpeg)
+
+## Profil Mahasiswa
+
+![Profile](Profile5.jpeg)
 
 ---
 
 # ✨ Fitur Utama
 
-| Fitur | Status |
-|---|---|
-| 🔐 Login mahasiswa dengan validasi form | ✅ |
-| 💾 Penyimpanan user session dengan AsyncStorage | ✅ |
-| 📚 Daftar mata kuliah menggunakan FlatList | ✅ |
-| 📄 Detail mata kuliah menggunakan Stack Navigation | ✅ |
-| 📈 Progress belajar tersimpan lokal | ✅ |
-| 📷 Upload foto tugas menggunakan expo-image-picker | ✅ |
-| 🗂️ Riwayat upload tugas tersimpan AsyncStorage | ✅ |
-| 🔄 Bottom Tab Navigation | ✅ |
-| ⏳ Loading state dan empty state | ✅ |
-
----
-
-# 🍬 Coba Online (Expo Snack)
-
-Mau mencoba aplikasi tanpa install APK terlebih dahulu?
-
-Buka melalui Expo Snack:
-
-**[▶️ Buka di Expo Snack](LINK_EXPO_SNACK)**
-
-> Catatan: fitur upload gambar membutuhkan akses perangkat asli. Jalankan melalui Expo Go di HP untuk mencoba fitur device.
+- [x] Login mahasiswa dengan validasi form
+- [x] Penyimpanan data login menggunakan AsyncStorage
+- [x] Dashboard daftar mata kuliah menggunakan FlatList
+- [x] Detail mata kuliah menggunakan Stack Navigation
+- [x] Progress belajar tersimpan secara lokal
+- [x] Upload foto tugas menggunakan expo-image-picker
+- [x] Riwayat upload tugas menggunakan AsyncStorage
+- [x] Profil mahasiswa dan fitur logout
+- [x] Bottom Tab Navigation
+- [x] Conditional rendering loading dan empty state
 
 ---
 
 # 🛠️ Tech Stack
 
-- **React Native** + **Expo SDK 54**
-- **React Navigation v7**
-  - Native Stack Navigator
-  - Bottom Tab Navigator
-- `@react-native-async-storage/async-storage`
-  - penyimpanan data lokal
-- `expo-image-picker`
-  - upload foto tugas
-- **EAS Build**
-  - generate APK Android
+| Layer | Teknologi |
+|---|---|
+| Framework | React Native + Expo SDK 54 |
+| Language | JavaScript |
+| Navigation | React Navigation v7 (Stack + Bottom Tab) |
+| Storage | AsyncStorage |
+| Device Feature | expo-image-picker |
+| Build | EAS Build (Expo Application Services) |
 
 ---
 
-# 📥 Cara Install APK
+# 📱 Fitur Teknis yang Diimplementasikan
 
-1. Download APK UniLearn dari link berikut:
+## 1. useState + Conditional Rendering
 
-**[⬇️ Download APK UniLearn](https://expo.dev/artifacts/eas/Nx91xP91h9g4HiAkM1VCrPzX_CGVmqiZovnSAUFwNdQ.apk)**
-
-2. Buka file APK pada HP Android
-
-3. Jika muncul izin instalasi dari sumber tidak dikenal, aktifkan izin tersebut
-
-4. Tekan install dan buka aplikasi UniLearn
+Digunakan untuk:
+- menyimpan input login
+- mengatur error validasi
+- mengatur loading data
+- mengatur status progress belajar
+- menampilkan empty state ketika data kosong
 
 ---
 
-# 🚀 Menjalankan Project (Development)
+## 2. React Navigation
+
+Navigasi aplikasi menggunakan:
+
+### Stack Navigation
+
+Digunakan untuk:
+- Login Screen
+- Detail Mata Kuliah
+
+### Bottom Tab Navigation
+
+Digunakan untuk:
+- Beranda
+- Progres
+- Profil
+
+---
+
+## 3. FlatList
+
+FlatList digunakan untuk menampilkan:
+
+- Daftar mata kuliah
+- Riwayat upload tugas
+
+Dengan:
+
+- keyExtractor
+- renderItem
+- ListEmptyComponent
+
+---
+
+## 4. AsyncStorage CRUD
+
+Data yang disimpan secara lokal:
+
+### User
+
+Menyimpan:
+- Nama mahasiswa
+- NIM
+
+### Progress
+
+Menyimpan:
+- Status selesai belajar mata kuliah
+
+### Tugas
+
+Menyimpan:
+- Foto tugas
+- Tanggal upload
+
+Data tetap tersedia walaupun aplikasi ditutup.
+
+---
+
+## 5. Form Validation
+
+Login memiliki validasi:
+
+- NIM wajib diisi
+- Nama wajib diisi
+- Minimal panjang NIM
+
+Pesan error akan tampil jika input tidak sesuai.
+
+---
+
+## 6. Device Feature
+
+Menggunakan:
+
+`expo-image-picker`
+
+Untuk:
+
+- meminta izin akses galeri
+- memilih foto tugas
+- menyimpan URI foto
+
+---
+
+# 🚀 Cara Menjalankan Project
 
 Clone repository:
 
 ```bash
 git clone https://github.com/misyesinaga1-alt/UniLearn-UAS.git
-
-cd UniLearn-UAS
-
-npm install
-
-npx expo start
-```
-
-Scan QR Code menggunakan aplikasi **Expo Go**.
-
-Untuk build APK sendiri:
-
-```bash
-eas build --platform android --profile preview
-```
-
----
-
-# 📸 Screenshot
-
-## Halaman Login
-
-![Login Screen](Login1.jpeg)
-
-
-## Halaman Beranda Mata Kuliah
-
-![Home Screen](Home2.jpeg)
-
-
-## Detail Mata Kuliah
-
-![Feature Screen](Feature3.jpeg)
-
-
-## Upload Foto Tugas
-
-![Upload Tugas](Upload4.jpeg)
-
-
-## Profil Mahasiswa
-
-![Profile Screen](Profile5.jpeg)
-
----
-
-# 📦 EAS Build
-
-Status build:
-
-✅ Finished
-
-Platform:
-
-🤖 Android APK
-
-Download:
-
-https://expo.dev/artifacts/eas/Nx91xP91h9g4HiAkM1VCrPzX_CGVmqiZovnSAUFwNdQ.apk
-
----
-
-# 🔗 Link Penting
-
-- **Repository GitHub:**
-
-https://github.com/misyesinaga1-alt/UniLearn-UAS
-
-
-- **Download APK:**
-
-https://expo.dev/artifacts/eas/Nx91xP91h9g4HiAkM1VCrPzX_CGVmqiZovnSAUFwNdQ.apk
-
-
-- **Expo Snack:**
-
-LINK_EXPO_SNACK
-
-
----
-
-# 📂 Struktur Project
-
-```
-UniLearn
-│
-├── App.js
-├── app.json
-├── eas.json
-├── package.json
-│
-├── src
-│   ├── navigation
-│   │   └── AppNavigator.js
-│   │
-│   ├── screens
-│   │   ├── LoginScreen.js
-│   │   ├── HomeScreen.js
-│   │   ├── MatkulDetailScreen.js
-│   │   ├── ProgresScreen.js
-│   │   └── ProfileScreen.js
-│   │
-│   ├── components
-│   │   ├── LoadingSpinner.js
-│   │   └── EmptyState.js
-│   │
-│   ├── services
-│   │   └── storage.js
-│   │
-│   └── constants
-│       └── colors.js
-```
-
----
-
-# 👤 Author
-
-**Misye Retno Wulansari Br Sinaga**
-
-Final Project UAS Praktikum Pemrograman Mobile
-
-Universitas Prima Indonesia  
-Program Studi Sistem Informasi
-
-Mata Kuliah:
-**Pemrograman Mobile (TI-MOBILE-01)**
