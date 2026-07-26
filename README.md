@@ -89,3 +89,123 @@ cd UniLearn-UAS
 npm install
 
 npx expo start
+```
+
+Scan QR Code menggunakan aplikasi **Expo Go**.
+
+Untuk build APK sendiri:
+
+```bash
+eas build --platform android --profile preview
+```
+
+---
+
+# 📸 Screenshot
+
+## Halaman Login
+
+![Login Screen](Login1.jpeg)
+
+
+## Halaman Beranda Mata Kuliah
+
+![Home Screen](Home2.jpeg)
+
+
+## Detail Mata Kuliah
+
+![Feature Screen](Feature3.jpeg)
+
+
+## Upload Foto Tugas
+
+![Upload Tugas](Upload4.jpeg)
+
+
+## Profil Mahasiswa
+
+![Profile Screen](Profile5.jpeg)
+
+---
+
+# 📦 EAS Build
+
+Status build:
+
+✅ Finished
+
+Platform:
+
+🤖 Android APK
+
+Download:
+
+https://expo.dev/artifacts/eas/Nx91xP91h9g4HiAkM1VCrPzX_CGVmqiZovnSAUFwNdQ.apk
+
+---
+
+# 🔗 Link Penting
+
+- **Repository GitHub:**
+
+https://github.com/misyesinaga1-alt/UniLearn-UAS
+
+
+- **Download APK:**
+
+https://expo.dev/artifacts/eas/Nx91xP91h9g4HiAkM1VCrPzX_CGVmqiZovnSAUFwNdQ.apk
+
+
+- **Expo Snack:**
+
+[LINK_EXPO_SNACK](https://snack.expo.dev/@misyesinaga/b58cda)
+
+
+---
+
+# 📂 Struktur Project
+
+```
+UniLearn
+│
+├── App.js
+├── app.json
+├── eas.json
+├── package.json
+│
+├── src
+│   ├── navigation
+│   │   └── AppNavigator.js
+│   │
+│   ├── screens
+│   │   ├── LoginScreen.js
+│   │   ├── HomeScreen.js
+│   │   ├── MatkulDetailScreen.js
+│   │   ├── ProgresScreen.js
+│   │   └── ProfileScreen.js
+│   │
+│   ├── components
+│   │   ├── LoadingSpinner.js
+│   │   └── EmptyState.js
+│   │
+│   ├── services
+│   │   └── storage.js
+│   │
+│   └── constants
+│       └── colors.js
+```
+
+---
+
+# 👤 Author
+
+**Misye Retno Wulansari Br Sinaga**
+
+Final Project UAS Praktikum Pemrograman Mobile
+
+Universitas Prima Indonesia  
+Program Studi Sistem Informasi
+
+Mata Kuliah:
+**Pemrograman Mobile (TI-MOBILE-01)**
